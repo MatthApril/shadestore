@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadestore - Proyek UAS</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topNavbar position-fixed z-3">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <img src="assets/brand.png" class="mx-3 mt-1" alt="" style="width: 6.7rem;">
+          </a>
+            <div class="d-lg-flex gap-4 me-3 d-none">
+              <a href="login.html" class="navbar-button btn btn-info"><i class="bi-box-arrow-in-left"> </i>Login</a>
+              <a href="register.html" class="navbar-button btn btn-info"><i class="bi-person"> </i>Register</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+  </header>
+
+  <div class="container-fluid" style="padding-top: 5rem;">
+    <div class="row">
+        <div class="col-lg-2 d-none d-lg-block my-3">
+          <div class="sidenav navbar-nav rounded-4 bg-light p-4 position-sticky" style="top: 6rem;">
+            <h5>Menu</h5>
+            <a href="index.html" class="sidebar-text"><i class="bi-house"> </i>Home</a>
+            <a href="#" class="sidebar-text text-secondary"><i class="bi-controller"> </i>All Games</a>
+            <a href="minigame.html" class="sidebar-text"><i class="bi-joystick"> </i>Mini-game</a>
+            <hr>
+            <h5>Navigation</h5>
+            <a href="faq.html" class="sidebar-text"><i class="bi-question-circle"> </i>FAQ</a>
+            <a href="about.html" class="sidebar-text"><i class="bi-people"> </i>About Us</a>
+            <hr>
+            <h5>User</h5>
+            <a href="login.html" class="sidebar-text"><i class="bi-box-arrow-in-left"> </i>Login</a>
+            <a href="register.html" class="sidebar-text"><i class="bi-person"> </i>Register</a>
+          </div>
+        </div>
+
+    <div id="dark-overlay" class="d-none position-fixed w-100 h-100 bg-black opacity-50 z-2 top-0 start-0"></div>
+      <div class="collapse navbar-collapse fixed-top" id="navbarSupportedContent"  style="margin-top: 5rem;">
+        <div class="col-lg-2 mt-3">
+          <div class="card rounded-4 bg-light p-3">
+            <h5>Menu</h5>
+            <a href="index.html" class="sidebar-text"><i class="bi-house"> </i>Home</a>
+            <a href="#" class="sidebar-text text-secondary"><i class="bi-controller"> </i>All Games</a>
+            <a href="minigame.html" class="sidebar-text"><i class="bi-joystick"> </i>Mini-game</a>
+            <hr>
+            <h5>Navigation</h5>
+            <a href="faq.html" class="sidebar-text"><i class="bi-question-circle"> </i>FAQ</a>
+            <a href="about.html" class="sidebar-text"><i class="bi-people"> </i>About Us</a>
+            <hr>
+            <h5>User</h5>
+            <a href="login.html" class="sidebar-text"><i class="bi-box-arrow-in-left"> </i>Login</a>
+            <a href="register.html" class="sidebar-text"><i class="bi-person"> </i>Register</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-10 col-md-12 mt-3 pb-5">
+        <div class="mb-3">
+            <button onclick="allGames()" class="btn btn-outline-secondary rounded-5">All Games</button>
+            <button onclick="topUp()" class="btn btn-outline-secondary rounded-5">Top-up</button>
+            <button onclick="joki()" class="btn btn-outline-secondary rounded-5">Joki</button>
+            <button onclick="voucher()" class="btn btn-outline-secondary rounded-5">Voucher</button>
+        </div>
+        <div class="all-games-page">
+            <h3 class="featured-title col-lg-12 mx-auto mb-4"><i class="bi-controller"> </i>All Games</h3>
+            <div class="row">
+                  <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 14rem;">
+                      <img src="/assets/hoktopup.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#hokTopupModal">
+                      <div class="card-body d-flex justify-content-center">
+                        <a href="hoktopup.html" class="btn btn-outline-primary">Enter</a>
+                      </div>
+                      <div class="modal fade" id="hokTopupModal" tabindex="-1" aria-labelledby="hokModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header d-flex justify-content-center">
+                              <h1 class="modal-title fs-5" id="hokModalLabel">Honor of Kings: Top-Up</h1>
+                            </div>
+                            <div class="modal-body d-flex">
+                                <img src="/assets/hoktopup.jpg" class="card-img-top" alt="..." style="width: 12rem;">
+                                <div class="container" style="text-align: justify;">
+                                    <h5>Description</h5>
+                                    <p>Boost your Honor of Kings gameplay with fast and secure top-ups. Get your in-game credits at the best rates and dominate the battlefield with ease. Experience smooth transactions and instant delivery so you can focus on becoming a legend!</p>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div> <!--END-->
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+                      <div class="card" style="width: 14rem;">
+                        <img src="/assets/wrtopup.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#wrTopupModal">
+                        <div class="card-body d-flex justify-content-center">
+                            <a href="lolwr.html" class="btn btn-outline-primary">Enter</a>
+                        </div>
+                        <div class="modal fade" id="wrTopupModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header d-flex justify-content-center">
+                                  <h1 class="modal-title fs-5" id="ModalLabel">League of Legends Wild Rift: Top-Up</h1>
+                                </div>
+                                <div class="modal-body d-flex">
+                                    <img src="/assets/wrtopup.jpg" class="card-img-top" alt="..." style="width: 12rem;">
+                                    <div class="container" style="text-align: justify;">
+                                        <h5>Description</h5>
+                                        <p>Take your Wild Rift experience to the next level with hassle-free top-ups. Purchase Wild Cores to unlock legendary skins, champions, and other premium features. Trusted and secure, we ensure fast transactions to keep your game going strong.</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+                  <div class="card" style="width: 14rem;">
+                      <img src="/assets/mlbbtopup.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#mlbbTopupModal">
+                      <div class="card-body d-flex justify-content-center">
+                          <a href="mlbbtupup.html" class="btn btn-outline-primary">Enter</a>
+                        </div>
+                        <div class="modal fade" id="mlbbTopupModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header d-flex justify-content-center">
+                                  <h1 class="modal-title fs-5" id="ModalLabel">Mobile Legends: Top-Up</h1>
+                                </div>
+                                <div class="modal-body d-flex">
+                                    <img src="/assets/mlbbtopup.jpg" class="card-img-top" alt="..." style="width: 12rem;">
+                                    <div class="container" style="text-align: justify;">
+                                        <h5>Description</h5>
+                                        <p>Stay ahead in the Land of Dawn with quick and reliable MLBB top-ups. Buy Diamonds to unlock epic heroes, exclusive skins, and more. Trusted by gamers, we ensure secure transactions and instant delivery to keep your game going strong.</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 14rem;">
+                      <img src="/assets/fftopup.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#ffTopupModal">
+                      <div class="card-body d-flex justify-content-center">
+                        <a href="ff.html" class="btn btn-outline-primary">Enter</a>
+                      </div>
+                      <div class="modal fade" id="ffTopupModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header d-flex justify-content-center">
+                              <h1 class="modal-title fs-5" id="ModalLabel">Free Fire: Top-Up</h1>
+                            </div>
+                            <div class="modal-body d-flex">
+                                <img src="/assets/fftopup.jpg" class="card-img-top" alt="..." style="width: 12rem;">
+                                <div class="container" style="text-align: justify;">
+                                    <h5>Description</h5>
+                                    <p>Get the edge in Free Fire with our affordable and fast top-up services. Buy Diamonds to unlock exclusive characters, skins, and emotes. Trusted by players, we guarantee instant delivery and secure transactions for all your gaming needs.</p>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div> 
+                    </div>
+                  </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 14rem;">
+                        <img src="/assets/pubgmtopup.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#pubgTopupModal">
+                        <div class="card-body d-flex justify-content-center">
+                            <a href="pubg.html" class="btn btn-outline-primary">Enter</a>
+                        </div>
+                        <div class="modal fade" id="pubgTopupModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header d-flex justify-content-center">
+                                  <h1 class="modal-title fs-5" id="ModalLabel">PUBG Mobile: Top-Up</h1>
+                                </div>
+                                <div class="modal-body d-flex">
+                                    <img src="/assets/pubgmtopup.jpg" class="card-img-top" alt="..." style="width: 12rem;">
+                                    <div class="container" style="text-align: justify;">
+                                        <h5>Description</h5>
+                                        <p>Power up your PUBG Mobile experience with our affordable top-up services. Purchase UC to unlock premium skins, exclusive outfits, and battle passes. Reliable, fast, and secure - get what you need to stay ahead of the competition.</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 14rem;">
+                        <img src="/assets/codmtopup.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#codmTopupModal">
+                        <div class="card-body d-flex justify-content-center">
+                            <a href="codm.html" class="btn btn-outline-primary">Enter</a>
+                        </div>
+                        <div class="modal fade" id="codmTopupModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header d-flex justify-content-center">
+                                  <h1 class="modal-title fs-5" id="ModalLabel">Call of Duty Mobile: Top-Up</h1>
+                                </div>
+                                <div class="modal-body d-flex">
+                                    <img src="/assets/codmtopup.jpg" class="card-img-top" alt="..." style="width: 12rem;">
+                                    <div class="container" style="text-align: justify;">
+                                        <h5>Description</h5>
+                                        <p>Enhance your Call of Duty Mobile gameplay with quick and secure top-ups. Purchase COD Points to unlock premium content, weapon skins, and operators. Get your points instantly and stay locked and loaded for every mission.</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 14rem;">
+                      <img src="/assets/hokjoki.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#hokJokiModal">
+                      <div class="card-body d-flex justify-content-center">
+                        <a href="hokjoki.html" class="btn btn-outline-primary">Enter</a>
+                      </div>
+                      <div class="modal fade" id="hokJokiModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header d-flex justify-content-center">
+                              <h1 class="modal-title fs-5" id="ModalLabel">Honor of Kings: Joki</h1>
+                            </div>
+                            <div class="modal-body d-flex">
+                                <img src="/assets/hokjoki.jpg" class="card-img-top" alt="..." style="width: 12rem;">
+                                <div class="container" style="text-align: justify;">
+                                    <h5>Description</h5>
+                                    <p>Struggling to rank up in Honor of Kings? Let our pro players handle it for you! Our joki service ensures a safe and seamless experience to get you to the rank you deserve. Your satisfaction and account security are our priorities.</p>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div> 
+                    </div>
+                  </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 14rem;">
+                        <img src="/assets/mlbbjoki.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#mlbbJokiModal">
+                        <div class="card-body d-flex justify-content-center">
+                            <a href="mlbbjoki.html" class="btn btn-outline-primary">Enter</a>
+                        </div>
+                        <div class="modal fade" id="mlbbJokiModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header d-flex justify-content-center">
+                                  <h1 class="modal-title fs-5" id="ModalLabel">Mobile Legends: Joki</h1>
+                                </div>
+                                <div class="modal-body d-flex">
+                                    <img src="/assets/mlbbjoki.jpg" class="card-img-top" alt="..." style="width: 12rem;">
+                                    <div class="container" style="text-align: justify;">
+                                        <h5>Description</h5>
+                                        <p>Achieve your dream rank effortlessly with our MLBB joki service. Let our experienced players carry you to higher ranks while you sit back and enjoy the rewards. Reliable, secure, and designed for maximum efficiency.</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 14rem;">
+                        <img src="/assets/gpvouch.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#gpvouchModal">
+                        <div class="card-body d-flex justify-content-center">
+                            <a href="googleplay.html" class="btn btn-outline-primary">Enter</a>
+                        </div>
+                        <div class="modal fade" id="gpvouchModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header d-flex justify-content-center">
+                                  <h1 class="modal-title fs-5" id="ModalLabel">Google Play</h1>
+                                </div>
+                                <div class="modal-body d-flex">
+                                    <img src="/assets/gpvouch.jpg" class="card-img-top" alt="..." style="width: 12rem;">
+                                    <div class="container" style="text-align: justify;">
+                                        <h5>Description</h5>
+                                        <p>Access endless entertainment with our Google Play vouchers. Use them to purchase apps, games, movies, books, and more from the Google Play Store. Fast delivery and secure transactions ensure a hassle-free experience for all your digital needs.</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div> 
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 14rem;">
+                        <img src="/assets/svouch.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#svouchModal">
+                        <div class="card-body d-flex justify-content-center">
+                            <a href="steam.html" class="btn btn-outline-primary">Enter</a>
+                        </div>
+                        <div class="modal fade" id="svouchModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header d-flex justify-content-center">
+                                  <h1 class="modal-title fs-5" id="ModalLabel">Steam</h1>
+                                </div>
+                                <div class="modal-body d-flex">
+                                    <img src="/assets/svouch.jpg" class="card-img-top" alt="..." style="width: 12rem;">
+                                    <div class="container" style="text-align: justify;">
+                                        <h5>Description</h5>
+                                        <p>Enhance your gaming library with our Steam vouchers. Redeem them to buy games, in-game items, DLCs, and more on the Steam platform. Reliable and instant delivery makes upgrading your collection easier than ever.</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div> 
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 14rem;">
+                        <img src="/assets/vvouch.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#vvouchModal">
+                        <div class="card-body d-flex justify-content-center">
+                            <a href="vidio.html" class="btn btn-outline-primary">Enter</a>
+                        </div>
+                        <div class="modal fade" id="vvouchModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header d-flex justify-content-center">
+                                  <h1 class="modal-title fs-5" id="ModalLabel">Vidio</h1>
+                                </div>
+                                <div class="modal-body d-flex">
+                                    <img src="/assets/vvouch.jpg" class="card-img-top" alt="..." style="width: 12rem;">
+                                    <div class="container" style="text-align: justify;">
+                                        <h5>Description</h5>
+                                        <p>Stream your favorite movies, TV shows, and sports events with Vidio vouchers. Unlock premium features and exclusive content in just a few clicks. Perfect for anyone seeking entertainment on demand with seamless and secure transactions.</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div> 
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 14rem;">
+                        <img src="/assets/gvouch.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#gvouchModal">
+                        <div class="card-body d-flex justify-content-center">
+                            <a href="garena.html" class="btn btn-outline-primary">Enter</a>
+                        </div>
+                        <div class="modal fade" id="gvouchModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header d-flex justify-content-center">
+                                  <h1 class="modal-title fs-5" id="ModalLabel">Garena</h1>
+                                </div>
+                                <div class="modal-body d-flex">
+                                    <img src="/assets/gvouch.jpg" class="card-img-top" alt="..." style="width: 12rem;">
+                                    <div class="container" style="text-align: justify;">
+                                        <h5>Description</h5>
+                                        <p>Power up your favorite Garena games with our Garena vouchers. Whether it's Free Fire, League of Legends, or other titles, these vouchers offer quick and secure access to premium content. Stay ahead of the competition with ease.</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="top-up-page">
+            <h3 class="section-title col-lg-12 mx-auto mb-4"><i class="bi-wallet2"> </i>Top-up</h3>
+            <div class="row">
+                  <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 14rem;">
+                        <img src="/assets/hoktopup.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#hokTopupModal2">
+                        <div class="card-body d-flex justify-content-center">
+                          <a href="hoktopup.html" class="btn btn-outline-primary">Enter</a>
+                        </div>
+                        <div class="modal fade" id="hokTopupModal2" tabindex="-1" aria-labelledby="hokModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header d-flex justify-content-center">
+                                <h1 class="modal-title fs-5" id="hokModalLabel">Honor of Kings: Top-Up</h1>
+                              </div>
+                              <div class="modal-body d-flex">
+                                  <img src="/assets/hoktopup.jpg" class="card-img-top" alt="..." style="width: 12rem;">
+                                  <div class="container" style="text-align: justify;">
+                                      <h5>Description</h5>
+                                      <p>Boost your Honor of Kings gameplay with fast and secure top-ups. Get your in-game credits at the best rates and dominate the battlefield with ease. Experience smooth transactions and instant delivery so you can focus on becoming a legend!</p>
+                                  </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div> <!--END-->
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 14rem;">
+                        <img src="/assets/wrtopup.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#wrTopupModal2">
+                        <div class="card-body d-flex justify-content-center">
+                            <a href="lolwr.html" class="btn btn-outline-primary">Enter</a>
+                        </div>
+                        <div class="modal fade" id="wrTopupModal2" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header d-flex justify-content-center">
+                                  <h1 class="modal-title fs-5" id="ModalLabel">League of Legends Wild Rift: Top-Up</h1>
+                                </div>
+                                <div class="modal-body d-flex">
+                                    <img src="/assets/wrtopup.jpg" class="card-img-top" alt="..." style="width: 12rem;">
+                                    <div class="container" style="text-align: justify;">
+                                        <h5>Description</h5>
+                                        <p>Take your Wild Rift experience to the next level with hassle-free top-ups. Purchase Wild Cores to unlock legendary skins, champions, and other premium features. Trusted and secure, we ensure fast transactions to keep your game going strong.</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 14rem;">
+                        <img src="/assets/mlbbtopup.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#mlbbTopupModal2">
+                        <div class="card-body d-flex justify-content-center">
+                            <a href="mlbbtupup.html" class="btn btn-outline-primary">Enter</a>
+                          </div>
+                          <div class="modal fade" id="mlbbTopupModal2" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header d-flex justify-content-center">
+                                    <h1 class="modal-title fs-5" id="ModalLabel">Mobile Legends: Top-Up</h1>
+                                  </div>
+                                  <div class="modal-body d-flex">
+                                      <img src="/assets/mlbbtopup.jpg" class="card-img-top" alt="..." style="width: 12rem;">
+                                      <div class="container" style="text-align: justify;">
+                                          <h5>Description</h5>
+                                          <p>Stay ahead in the Land of Dawn with quick and reliable MLBB top-ups. Buy Diamonds to unlock epic heroes, exclusive skins, and more. Trusted by gamers, we ensure secure transactions and instant delivery to keep your game going strong.</p>
+                                      </div>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                                  </div>
+                                </div>
+                              </div>
+                          </div> 
+                      </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 14rem;">
+                        <img src="/assets/fftopup.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#ffTopupModal2">
+                        <div class="card-body d-flex justify-content-center">
+                          <a href="ff.html" class="btn btn-outline-primary">Enter</a>
+                        </div>
+                        <div class="modal fade" id="ffTopupModal2" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header d-flex justify-content-center">
+                                <h1 class="modal-title fs-5" id="ModalLabel">Free Fire: Top-Up</h1>
+                              </div>
+                              <div class="modal-body d-flex">
+                                  <img src="/assets/fftopup.jpg" class="card-img-top" alt="..." style="width: 12rem;">
+                                  <div class="container" style="text-align: justify;">
+                                      <h5>Description</h5>
+                                      <p>Get the edge in Free Fire with our affordable and fast top-up services. Buy Diamonds to unlock exclusive characters, skins, and emotes. Trusted by players, we guarantee instant delivery and secure transactions for all your gaming needs.</p>
+                                  </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                              </div>
+                            </div>
+                          </div>
+                      </div> 
+                      </div>
+                  </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 14rem;">
+                        <img src="/assets/pubgmtopup.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#pubgTopupModal2">
+                        <div class="card-body d-flex justify-content-center">
+                            <a href="pubg.html" class="btn btn-outline-primary">Enter</a>
+                        </div>
+                        <div class="modal fade" id="pubgTopupModal2" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header d-flex justify-content-center">
+                                  <h1 class="modal-title fs-5" id="ModalLabel">PUBG Mobile: Top-Up</h1>
+                                </div>
+                                <div class="modal-body d-flex">
+                                    <img src="/assets/pubgmtopup.jpg" class="card-img-top" alt="..." style="width: 12rem;">
+                                    <div class="container" style="text-align: justify;">
+                                        <h5>Description</h5>
+                                        <p>Power up your PUBG Mobile experience with our affordable top-up services. Purchase UC to unlock premium skins, exclusive outfits, and battle passes. Reliable, fast, and secure - get what you need to stay ahead of the competition.</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 14rem;">
+                        <img src="/assets/codmtopup.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#codmTopupModal2">
+                        <div class="card-body d-flex justify-content-center">
+                            <a href="codm.html" class="btn btn-outline-primary">Enter</a>
+                        </div>
+                        <div class="modal fade" id="codmTopupModal2" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header d-flex justify-content-center">
+                                  <h1 class="modal-title fs-5" id="ModalLabel">Call of Duty Mobile: Top-Up</h1>
+                                </div>
+                                <div class="modal-body d-flex">
+                                    <img src="/assets/codmtopup.jpg" class="card-img-top" alt="..." style="width: 12rem;">
+                                    <div class="container" style="text-align: justify;">
+                                        <h5>Description</h5>
+                                        <p>Enhance your Call of Duty Mobile gameplay with quick and secure top-ups. Purchase COD Points to unlock premium content, weapon skins, and operators. Get your points instantly and stay locked and loaded for every mission.</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="joki-page">
+            <h3 class="section-title col-lg-12 mx-auto mb-4"><i class="bi-receipt"> </i>Joki</h3>
+            <div class="row mt-2">
+                <div class="col-lg-3 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 14rem;">
+                        <img src="/assets/hokjoki.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#hokJokiModal2">
+                        <div class="card-body d-flex justify-content-center">
+                          <a href="hokjoki.html" class="btn btn-outline-primary">Enter</a>
+                        </div>
+                        <div class="modal fade" id="hokJokiModal2" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header d-flex justify-content-center">
+                                <h1 class="modal-title fs-5" id="ModalLabel">Honor of Kings: Joki</h1>
+                              </div>
+                              <div class="modal-body d-flex">
+                                  <img src="/assets/hokjoki.jpg" class="card-img-top" alt="..." style="width: 12rem;">
+                                  <div class="container" style="text-align: justify;">
+                                      <h5>Description</h5>
+                                      <p>Struggling to rank up in Honor of Kings? Let our pro players handle it for you! Our joki service ensures a safe and seamless experience to get you to the rank you deserve. Your satisfaction and account security are our priorities.</p>
+                                  </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div> 
+                      </div>
+                  </div>
+                <div class="col-lg-3 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 14rem;">
+                        <img src="/assets/mlbbjoki.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#mlbbJokiModal2">
+                        <div class="card-body d-flex justify-content-center">
+                            <a href="mlbbjoki.html" class="btn btn-outline-primary">Enter</a>
+                        </div>
+                        <div class="modal fade" id="mlbbJokiModal2" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header d-flex justify-content-center">
+                                  <h1 class="modal-title fs-5" id="ModalLabel">Mobile Legends: Joki</h1>
+                                </div>
+                                <div class="modal-body d-flex">
+                                    <img src="/assets/mlbbjoki.jpg" class="card-img-top" alt="..." style="width: 12rem;">
+                                    <div class="container" style="text-align: justify;">
+                                        <h5>Description</h5>
+                                        <p>Achieve your dream rank effortlessly with our MLBB joki service. Let our experienced players carry you to higher ranks while you sit back and enjoy the rewards. Reliable, secure, and designed for maximum efficiency.</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="voucher-page">
+            <h3 class="section-title col-lg-12 mx-auto mb-4"><i class="bi-receipt"> </i>Voucher</h3>
+            <div class="row mt-2">
+                <div class="col-lg-3 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 14rem;">
+                        <img src="/assets/gpvouch.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#gpvouchModal2">
+                        <div class="card-body d-flex justify-content-center">
+                            <a href="googleplay.html" class="btn btn-outline-primary">Enter</a>
+                        </div>
+                        <div class="modal fade" id="gpvouchModal2" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header d-flex justify-content-center">
+                                  <h1 class="modal-title fs-5" id="ModalLabel">Google Play</h1>
+                                </div>
+                                <div class="modal-body d-flex">
+                                    <img src="/assets/gpvouch.jpg" class="card-img-top" alt="..." style="width: 12rem;">
+                                    <div class="container" style="text-align: justify;">
+                                        <h5>Description</h5>
+                                        <p>Access endless entertainment with our Google Play vouchers. Use them to purchase apps, games, movies, books, and more from the Google Play Store. Fast delivery and secure transactions ensure a hassle-free experience for all your digital needs.</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div> 
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 14rem;">
+                        <img src="/assets/svouch.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#svouchModal2">
+                        <div class="card-body d-flex justify-content-center">
+                            <a href="steam.html" class="btn btn-outline-primary">Enter</a>
+                        </div>
+                        <div class="modal fade" id="svouchModal2" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header d-flex justify-content-center">
+                                  <h1 class="modal-title fs-5" id="ModalLabel">Steam</h1>
+                                </div>
+                                <div class="modal-body d-flex">
+                                    <img src="/assets/svouch.jpg" class="card-img-top" alt="..." style="width: 12rem;">
+                                    <div class="container" style="text-align: justify;">
+                                        <h5>Description</h5>
+                                        <p>Enhance your gaming library with our Steam vouchers. Redeem them to buy games, in-game items, DLCs, and more on the Steam platform. Reliable and instant delivery makes upgrading your collection easier than ever.</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div> 
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 14rem;">
+                        <img src="/assets/vvouch.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#vvouchModal2">
+                        <div class="card-body d-flex justify-content-center">
+                            <a href="vidio.html" class="btn btn-outline-primary">Enter</a>
+                        </div>
+                        <div class="modal fade" id="vvouchModal2" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header d-flex justify-content-center">
+                                  <h1 class="modal-title fs-5" id="ModalLabel">Vidio</h1>
+                                </div>
+                                <div class="modal-body d-flex">
+                                    <img src="/assets/vvouch.jpg" class="card-img-top" alt="..." style="width: 12rem;">
+                                    <div class="container" style="text-align: justify;">
+                                        <h5>Description</h5>
+                                        <p>Stream your favorite movies, TV shows, and sports events with Vidio vouchers. Unlock premium features and exclusive content in just a few clicks. Perfect for anyone seeking entertainment on demand with seamless and secure transactions.</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div> 
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 14rem;">
+                        <img src="/assets/gvouch.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#gvouchModal2">
+                        <div class="card-body d-flex justify-content-center">
+                            <a href="garena.html" class="btn btn-outline-primary">Enter</a>
+                        </div>
+                        <div class="modal fade" id="gvouchModal2" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header d-flex justify-content-center">
+                                  <h1 class="modal-title fs-5" id="ModalLabel">Garena</h1>
+                                </div>
+                                <div class="modal-body d-flex">
+                                    <img src="/assets/gvouch.jpg" class="card-img-top" alt="..." style="width: 12rem;">
+                                    <div class="container" style="text-align: justify;">
+                                        <h5>Description</h5>
+                                        <p>Power up your favorite Garena games with our Garena vouchers. Whether it's Free Fire, League of Legends, or other titles, these vouchers offer quick and secure access to premium content. Stay ahead of the competition with ease.</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div> 
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-light pt-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="assets/brand.png" alt="Logo" width="150" class="mb-3">
+              <p>
+                Welcome to ShadeStore! This e-commerce project is dedicated to providing top-up services and boosting assistance for various mobile games, including Mobile Legends and more.
+              </p>
+              <p>
+                Our goal is to offer a seamless and secure platform for gamers to enhance their gaming experiences.
+              </p>
+            </div>
+      
+            <div class="col-md-6">
+              <h5>Contact Us</h5>
+              <ul class="list-unstyled">
+                <li><i class="bi bi-envelope"></i> Email: support@shadestore.com</li>
+                <li><i class="bi bi-telephone"></i> Phone: +62 811-3787-333</li>
+                <li><i class="bi bi-whatsapp"></i> WhatsApp: +62 811-3787-333</li>
+                <li><i class="bi bi-geo-alt"></i> Address: 123 Gaming Lane, Game City</li>
+              </ul>
+              <h5>Follow Us</h5>
+              <div>
+                <a href="https://www.facebook.com" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.x.com" class="text-light me-3"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://www.instagram.com" class="text-light me-3"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.github.com" class="text-light"><i class="bi bi-github"></i></a>
+              </div>
+            </div>
+          </div>
+          <hr>
+    
+          <div class="row my-4">
+            <div class="col text-center">
+              <p class="">&copy; 2025 | E-Commerce Matthew. All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

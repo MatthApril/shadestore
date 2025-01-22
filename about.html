@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadestore - Proyek UAS</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .hero {
+        background: linear-gradient(to bottom right, #4e54c8, #a3a8f8);
+        color: white;
+        text-align: center;
+        padding: 5rem 1rem;
+    }
+    .content {
+        padding: 3rem 1rem;
+    }
+    #word-cloud {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+    }
+    .thank-you {
+      position: absolute;
+      font-size: 1.5rem;
+      color: #6c757d;
+      user-select: none;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+    }
+    .thank-you:hover {  
+      color: #007bff;
+      text-shadow: 0px 0px 10px #007bff;
+    }
+</style>
+</head>
+<body>
+  <header class="topNavbar position-fixed z-3">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <img src="assets/brand.png" class="mx-3 mt-1" alt="" style="width: 6.7rem;">
+          </a>
+          <div class="ms-auto me-4">
+            <form id="search-form" class="search-bar">
+              <input type="text" id="search-input" class="form-control d-sm-block d-none" placeholder="Search services..." autocomplete="off"/>
+              <div id="search-results" class="search-results d-none"></div>
+          </div>
+            <div class="d-lg-flex gap-4 me-3 d-none">
+              <a href="login.html" class="navbar-button btn btn-info"><i class="bi-box-arrow-in-left"> </i>Login</a>
+              <a href="register.html" class="navbar-button btn btn-info"><i class="bi-person"> </i>Register</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+  </header>
+
+  <div class="container-fluid mb-3" style="padding-top: 5rem;">
+    <div class="row">
+        <div class="col-lg-2 d-none d-lg-block mt-3">
+          <div class="sidenav navbar-nav rounded-4 bg-light p-4 position-sticky" style="top: 6rem;">
+            <h5>Menu</h5>
+            <a href="#" class="sidebar-text"><i class="bi-house"> </i>Home</a>
+            <a href="search.html" class="sidebar-text"><i class="bi-controller"> </i>All Games</a>
+            <a href="minigame.html" class="sidebar-text"><i class="bi-joystick"> </i>Mini-game</a>
+            <hr>
+            <h5>Navigation</h5>
+            <a href="faq.html" class="sidebar-text"><i class="bi-question-circle"> </i>FAQ</a>
+            <a href="about.html" class="sidebar-text text-secondary"><i class="bi-people"> </i>About Us</a>
+            <hr>
+            <h5>User</h5>
+            <a href="login.html" class="sidebar-text"><i class="bi-box-arrow-in-left"> </i>Login</a>
+            <a href="register.html" class="sidebar-text"><i class="bi-person"> </i>Register</a>
+          </div>
+        </div>
+      
+    <div id="dark-overlay" class="d-none position-fixed w-100 h-100 bg-black opacity-50 z-2 top-0 start-0"></div>
+      <div class="bg-navbar collapse navbar-collapse fixed-top" id="navbarSupportedContent" style="margin-top: 6rem;">
+          <div class="card rounded-4 bg-light p-3">
+            <h5>Menu</h5>
+            <a href="#" class="sidebar-text"><i class="bi-house"> </i>Home</a>
+            <a href="search.html" class="sidebar-text"><i class="bi-controller"> </i>All Games</a>
+            <a href="minigame.html" class="sidebar-text"><i class="bi-joystick"> </i>Mini-game</a>
+            <hr>
+            <h5>Navigation</h5>
+            <a href="faq.html" class="sidebar-text"><i class="bi-question-circle"> </i>FAQ</a>
+            <a href="about.html" class="sidebar-text text-secondary"><i class="bi-people"> </i>About Us</a>
+            <hr>
+            <h5>User</h5>
+            <a href="login.html" class="sidebar-text"><i class="bi-box-arrow-in-left"> </i>Login</a>
+            <a href="register.html" class="sidebar-text"><i class="bi-person"> </i>Register</a>
+          </div>
+      </div>
+      <div class="col-lg-10 col-md-12 mt-3 pb-5">
+        <div class="hero">
+            <h1>About Us</h1>
+            <p>Learn more about our store, its journey, and the people behind it.</p>
+        </div>
+        <div class="container content">
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <section class="mb-5">
+                        <h2 class="text-center mb-4">Our Story</h2>
+                        <p>Welcome to Shade store! My name is Matthew Aprilian, from ISTTS. This store was built with immense dedication and effort to create a smooth and enjoyable experience for users. From conceptualizing the design to implementing functionalities, every step of the journey required meticulous planning.</p>
+                        <p>This website represents a culmination of learning and practical application of modern web technologies, including HTML, CSS, JavaScript, and Bootstrap. By incorporating user-friendly navigation, aesthetic design, and seamless functionality, we aim to provide our visitors with a top-notch experience.</p>
+                    </section>
+                </div>
+                
+                <div class="col-lg-6 col-sm-12">
+                    <section class="mb-5">
+                        <h2 class="text-center mb-4">How It Was Made</h2>
+                        <p>Creating this store involved hours of coding, debugging, and refining details. The website employs:
+                        <ul>
+                            <li>Responsive design to ensure accessibility across all devices.</li>
+                            <li>Interactive features built with JavaScript to enhance user engagement.</li>
+                            <li>The Bootstrap framework to maintain a consistent and professional appearance.</li>
+                        </ul>
+                        </p>
+                        <p>We took inspiration from real-world e-commerce platforms, analyzing their strengths and weaknesses to build a unique project that blends creativity with practicality.</p>
+                    </section>
+                </div>
+        
+                <div class="col-lg-4 col-sm-12">
+                  <div class="mx-auto mb-5" style="width: 20rem;">
+                    <img src="/assets/me.jpg" class="img-fluid rounded-5 shadow" alt="..." data-bs-toggle="modal" data-bs-target="#pubgTopupModal">
+                    <div class="modal fade" id="pubgTopupModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                          <div class="modal-content">
+                            <div class="modal-header d-flex justify-content-center">
+                              <h1 class="modal-title fs-5" id="ModalLabel">Word Cloud</h1>
+                            </div>
+                            <div class="modal-body">
+                              <div class="d-flex justify-content-center">
+                                <img src="/assets/wordcloud.jpg" alt="" style="width: 16rem;">
+                              </div>
+                                <p><div class="text-center">Penjelasan Efek Interaktif "Thank You"</div> <br>
+                                Efek interaktif "Thank You" ini dibuat menggunakan JavaScript untuk menciptakan pengalaman visual yang dinamis dan menarik di halaman About Us. Berikut adalah penjelasan code JavaScript saya: <br></p>
+                                <div class="d-flex justify-content-center">
+                                  <img src="/assets/codeJS.jpg" class="img-fluid" alt="">
+                                </div>
+                                <p> <br>
+                                  1. DOMContentLoaded <br>
+                                  Menunggu hingga seluruh dokumen HTML selesai dimuat sebelum menjalankan kode di dalam fungsi ini. <br>
+                                  2. const messages <br>
+                                  Mendefinisikan array messages yang berisi kumpulan pesan "terima kasih" dalam berbagai bahasa. Array ini akan digunakan untuk menghasilkan elemen teks pada word cloud. <br>
+                                  3. const cloudContainer <br>
+                                  Mengambil elemen HTML dengan ID word-cloud sebagai kontainer utama untuk word cloud. <br>
+                                  4. const containerWidth dan containerHeight <br>
+                                  Mengambil lebar dan tinggi dari word cloud container <br>
+                                  5. messages.forEach((message) => { <br>
+                                    const word <br>
+                                    ... <br>
+                                  }); <br>
+                                  Mengiterasi setiap elemen dalam array messages. Const word akan membuat elemen div baru untuk menampilkan kata, Memberikan kelas CSS thank-you pada elemen tersebut untuk styling, dan mengisi elemen div dengan teks dari elemen array messages. <br>
+                                  6. const x dan y <br>
+                                  Menghitung posisi acak untuk setiap kata berdasarkan ukuran kontainer. Math.random() akan menghasilkan angka acak antara 0 dan 1. x adalah posisi horizontal (kiri) acak dengan batas pada lebar kontainer dikurangi 100 piksel. y adalah posisi vertikal (atas) acak dengan batas pada tinggi kontainer dikurangi 50 piksel. Posisi acak ini diterapkan ke properti CSS left dan top. <br>
+                                  7. cloudContainer.appendChild(word); <br>
+                                  Menambahkan elemen div yang berisi kata ke dalam kontainer word cloud (cloudContainer). <br>
+                                  8. function AnimateWords <br>
+                                  Mendefinisikan fungsi untuk menggerakkan kata-kata di dalam word cloud. words akan mengambil semua elemen dengan kelas thank-you. Untuk setiap elemen, newX dan newY akan menghitung posisi acak baru. transform akan menggeser elemen ke posisi baru menggunakan properti CSS translate. transition akan menambahkan efek transisi selama 3 detik menggunakan easing ease-in-out. <br>
+                                  9. setInterval(animateWords, 3000); <br>
+                                  Memanggil fungsi animateWords setiap 3 detik untuk menggerakkan kata-kata ke posisi acak baru secara periodik. <br> <br>
+                                  Sekian dan Terima Kasih.
+
+                                </p>
+                                
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div> 
+                </div>
+                </div>
+                <div class="col-lg-8 col-sm-12">
+                    <h2 class="text-center">Interactive Thank You</h2>
+                    <p class="text-center">
+                    Hover over the "Thank You" messages below to interact with them! Enjoy the dynamic experience!
+                    </p>
+                    <div id="word-cloud"></div>
+                </div>
+                <p class="text-center">
+                   Note: Click on the photo to see an explanation on the word cloud in Indonesia.
+                    </p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-light pt-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="assets/brand.png" alt="Logo" width="150" class="mb-3">
+          <p>
+            Welcome to ShadeStore! This e-commerce project is dedicated to providing top-up services and boosting assistance for various mobile games, including Mobile Legends and more.
+          </p>
+          <p>
+            Our goal is to offer a seamless and secure platform for gamers to enhance their gaming experiences.
+          </p>
+        </div>
+  
+        <div class="col-md-6">
+          <h5>Contact Us</h5>
+          <ul class="list-unstyled">
+            <li><i class="bi bi-envelope"></i> Email: support@shadestore.com</li>
+            <li><i class="bi bi-telephone"></i> Phone: +62 811-3787-333</li>
+            <li><i class="bi bi-whatsapp"></i> WhatsApp: +62 811-3787-333</li>
+            <li><i class="bi bi-geo-alt"></i> Address: 123 Gaming Lane, Game City</li>
+          </ul>
+          <h5>Follow Us</h5>
+          <div>
+            <a href="https://www.facebook.com" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.x.com" class="text-light me-3"><i class="bi bi-twitter-x"></i></a>
+            <a href=" https://www.instagram.com" class="text-light me-3"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.github.com" class="text-light"><i class="bi bi-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <div class="row my-4">
+        <div class="col text-center">
+          <p class="">&copy; 2025 | E-Commerce Matthew. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+
+
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="script.js"></script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const messages = [
+            "Thank You", "Gracias", "Merci", "Danke", "Grazie", 
+            "Arigato", "Terima Kasih", "Salamat", "Spasibo", "Shukran"
+        ];
+        const cloudContainer = document.getElementById("word-cloud");
+        const containerWidth = cloudContainer.offsetWidth;
+        const containerHeight = cloudContainer.offsetHeight;
+
+        messages.forEach((message) => {
+            const word = document.createElement("div");
+            word.className = "thank-you";
+            word.textContent = message;
+
+            const x = Math.random() * (containerWidth - 100);
+            const y = Math.random() * (containerHeight - 50);
+            word.style.left = `${x}px`;
+            word.style.top = `${y}px`;
+
+            cloudContainer.appendChild(word);
+        });
+
+        function animateWords() {
+            const words = document.querySelectorAll(".thank-you");
+            words.forEach((word) => {
+            const newX = Math.random() * (containerWidth - 100);
+            const newY = Math.random() * (containerHeight - 50);
+            word.style.transform = `translate(${newX - parseInt(word.style.left)}px, ${newY - parseInt(word.style.top)}px)`;
+            word.style.transition = "transform 3s ease-in-out";
+            });
+        }
+
+        setInterval(animateWords, 3000);
+        });
+      </script>
+</body>
+</html>
