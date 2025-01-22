@@ -149,9 +149,11 @@ body{
     opacity: 90%;
 }
 .bg-login-2{
+    height: 100vh;
     background: linear-gradient(90deg, #000000, #6d7091, #b4bfce);
 }
 .bg-login-3{
+    height: 100vh;
     background: linear-gradient(90deg, #b4bfce, #6d7091, #797979);
 }
 .login-container,
